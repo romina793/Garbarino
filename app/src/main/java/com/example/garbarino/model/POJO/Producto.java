@@ -6,4 +6,7 @@ public class Producto {
     private String url;
     private String id;
 
+
+
+
 }
