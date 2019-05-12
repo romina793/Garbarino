@@ -29,36 +29,37 @@ public class ProductoAdapter extends RecyclerView.Adapter  {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder( @NonNull ViewGroup viewGroup, int i ) {
-     //   View viewCelda = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.celda_pokemon,parent,false);
-        //ViewHolderProducto viewHolderProducto = new ViewHolderProducto(viewCelda);
-        return null;
+    public RecyclerView.ViewHolder onCreateViewHolder( @NonNull ViewGroup parent, int viewType ) {
+        View viewCelda = LayoutInflater.from(parent.getContext()).inflate(R.layout.celda_producto,parent,false);
+        ViewHolderProducto viewHolderProducto = new ViewHolderProducto(viewCelda);
+        return viewHolderProducto;
     }
 
     @Override
-    public void onBindViewHolder( @NonNull RecyclerView.ViewHolder viewHolder, int i ) {
-
+    public void onBindViewHolder( @NonNull RecyclerView.ViewHolder holder, int position) {
+        ViewHolderProducto viewHolderProducto = (ViewHolderProducto) holder;
+        viewHolderProducto.loadProducto(listaProductos.get(position));
     }
 
     @Override
     public int getItemCount() {
         return listaProductos.size();
+        //el error me da size = 0
     }
 
-    //TODO REVISAR
 
     private class ViewHolderProducto extends RecyclerView.ViewHolder{
 
-        private TextView textViewNombrePokemon;
+        private TextView textViewDescriptionProducto;
 
         public ViewHolderProducto(View itemView) {
             super(itemView);
-          //  textViewNombrePokemon = itemView.findViewById(R.id.celda_nombrePokemon);
+            textViewDescriptionProducto = itemView.findViewById(R.id.celda_nombreProducto);
         }
 
 
-        public void loadPokemon(Producto producto){
-           // textViewNombrePokemon.setText(producto.getName());
+        public void loadProducto(Producto producto){
+            textViewDescriptionProducto.setText(producto.getDescription());
         }
     }
 }

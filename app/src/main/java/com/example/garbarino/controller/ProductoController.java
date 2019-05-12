@@ -6,9 +6,9 @@ import com.example.garbarino.utils.ResultListener;
 
 public class ProductoController {
 
-    public void traerPokemons(final ResultListener<ConteinerProducto> listenerDelView) {
-        ProductoDao pokemonDAO = new ProductoDao();
-        pokemonDAO.traerPokemons(new ResultListener<ConteinerProducto>() {
+    public void traerProductos(final ResultListener<ConteinerProducto> listenerDelView) {
+        ProductoDao productoDao = new ProductoDao();
+        productoDao.traerProductos(new ResultListener<ConteinerProducto>() {
             @Override
             public void finish(ConteinerProducto result) {
                 listenerDelView.finish(result);

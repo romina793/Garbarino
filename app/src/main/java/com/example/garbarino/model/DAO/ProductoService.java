@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface ProductoService {
 
-    @GET("pokemon")
+    @GET("products")
         //Cada Call va a recibir un resultado del tipo especificado entre <>
     Call<ConteinerProducto> getProducto();
 }

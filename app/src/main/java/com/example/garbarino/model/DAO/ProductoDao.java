@@ -11,7 +11,7 @@ public class ProductoDao extends ProductoRetrofit{
 
     //Defino la urlBase
     // Atributo Service, que me va a permitir hacer las llamadas definidas
-    private static final String BASE_URL = "https://pokeapi.co/api/v2/";
+    private static final String BASE_URL = "http://garbarino-mock-api.s3-website-us-east-1.amazonaws.com/";
     private ProductoService pokemonService;
 
 
@@ -21,7 +21,7 @@ public class ProductoDao extends ProductoRetrofit{
     }
 
 
-    public void traerPokemons(final ResultListener<ConteinerProducto> listenerDelControler){
+    public void traerProductos(final ResultListener<ConteinerProducto> listenerDelControler){
         pokemonService.getProducto().enqueue(new Callback<ConteinerProducto>() {
             @Override
             public void onResponse( Call<ConteinerProducto> call, Response<ConteinerProducto> response) {
