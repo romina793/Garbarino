@@ -4,13 +4,13 @@ import java.util.List;
 
 public class ConteinerProducto {
 
-    private List<Producto> results;
+    private List<Producto> items;
 
     public List<Producto> getResults() {
-        return results;
+        return items;
     }
 
-    public void setResults(List<Producto> results) {
-        this.results = results;
+    public void setResults(List<Producto> item) {
+        this.items = items;
     }
 }

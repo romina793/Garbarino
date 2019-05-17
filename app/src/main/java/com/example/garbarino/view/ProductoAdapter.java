@@ -44,7 +44,6 @@ public class ProductoAdapter extends RecyclerView.Adapter  {
     @Override
     public int getItemCount() {
         return listaProductos.size();
-        //el error me da size = 0
     }
 
 
